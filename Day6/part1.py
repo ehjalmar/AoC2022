@@ -9,19 +9,14 @@ def is_isogram(string):
 
 def findStartOfPacket(inputText):
     currentIndex = 0
-    charsProcessed = 0
-    foundIt = False
     
-    while foundIt == False:
+    while True:
         currentBatch = inputText[currentIndex:currentIndex+4]
         if is_isogram(currentBatch):
-            foundIt = True
-            charsProcessed = currentIndex + 4
             break
         else:
             currentIndex += 1
 
-
-    return charsProcessed
+    return currentIndex + 4
 
 print(findStartOfPacket(line))

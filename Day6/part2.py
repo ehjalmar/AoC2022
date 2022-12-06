@@ -9,19 +9,14 @@ def is_isogram(string):
 
 def findStartOfMessage(inputText):
     currentIndex = 0
-    charsProcessed = 0
-    foundIt = False
     
-    while foundIt == False:
+    while True:
         currentBatch = inputText[currentIndex:currentIndex+14]
         if is_isogram(currentBatch):
-            foundIt = True
-            charsProcessed = currentIndex + 14
             break
         else:
             currentIndex += 1
 
-
-    return charsProcessed
+    return currentIndex + 14
 
 print(findStartOfMessage(line))
